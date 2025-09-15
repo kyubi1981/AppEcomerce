@@ -7,11 +7,13 @@ body{
     background-color: lightgrey;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
-    /*height: 100svh;*/
 }
 
 .grid-container{
-
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
 }
 
 .header{
@@ -30,125 +32,154 @@ body{
 
 .categories{
     /*display: flex;*/
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     margin: 2px;
     padding: 2px;
 }
 
-.mnu{
-    display: flex;
-    border: 1px solid black;
-    margin: 2px;
-    padding: 10px;
-}
-
-.mnu ul{
-    text-decoration: none;
-    color: black;
-}
-
-.mnu .saldo{
+.saldo{
     color: rgb(85, 84, 84);
 }
 
 .sidebar{
+    padding-left: 10px;
     grid-area: sidebar;
-    height: 100svh;
+    min-height: 200svh;
     /*background-color: rgb(197, 230, 133);*/
+    width: 15em;
 }
 
+.list{
+    display: flex;
+    justify-content: space-between;
+    padding: 2svh;
+    color: darkslategray;
+    /*flex-direction: column;*/
+    /*border-width: 0.1px;
+    border-style: inset;
+    border-color: rgb(151, 149, 149);*/
+}
+
+/*## - GALERIA - ##*/
 .main{
     grid-area: main;
+    padding-bottom: 2.5rem;
     /*background-color: #66f;*/
-    border: 1px solid black;
-    margin: 2px;
+    /*border: 1px solid black;*/
+    /*margin: 2px;*/
 }
 
-.bg{
-    background-color: white;
-    background-position: center;
-    background-size:contain;
-    background-repeat: no-repeat;
-
-    /*border: 1px solid black;
-    margin: 5px;*/
+.galery{
+    display: flex;
+    justify-content:space-around;
 }
 
 .img1{
     grid-area: a;
-    background-image: url("/assets/img/1.jpeg");
-    border: 1px solid black;
-    margin: 5px;
 }
 
 .img2{
     grid-area: b;
-    background-image: url("/assets/img/2.jpeg");
-    border: 1px solid black;
-    margin: 5px;
 }
 
 .img3{
     grid-area: c;
-    background-image: url("/assets/img/3.jpeg");
-    border: 1px solid black;
-    margin: 5px;
 }
 
 .img4{
     grid-area: d;
-    background-image: url("/assets/img/4.jpeg");
-    border: 1px solid black;
-    margin: 5px;
 }
 
 .img5{
     grid-area: e;
-    background-image: url("/assets/img/5.jpeg");
-    border: 1px solid black;
-    margin: 5px;
 }
 
 .img6{
     grid-area: f;
-    background-image: url("/assets/img/6.jpeg");
-    border: 1px solid black;
-    margin: 5px;
 }
 
 .img7{
     grid-area: g;
-    background-image: url("/assets/img/7.jpeg");
-    border: 1px solid black;
-    margin: 5px;
 }
 
 .img8{
     grid-area: h;
-    background-image: url("/assets/img/8.jpeg");
-    border: 1px solid black;
-    margin: 5px;
 }
 
 .img9{
     grid-area: i;
-    background-image: url("/assets/img/9.jpeg");
-    border: 1px solid black;
-    margin: 5px;
 }
 
 .img10{
     grid-area: j;
-    background-image: url("/assets/img/10.jpeg");
-    border: 1px solid black;
-    margin: 5px;
 }
 
 .img11{
     grid-area: k;
-    background-image: url("/assets/img/11.jpeg");
-    border: 1px solid black;
-    margin: 5px;
+}
+
+.cards{
+    padding: 5px;
+    width: 200px;
+    height: 60svh;
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid black;*/
+}
+
+.cards-img{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+    /*object-fit: contain;*/
+    /*border: 1px solid black;*/
+}
+
+.cards-img, img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    text-align: center;
+    /*align-content: center;*/
+    /*border: 1px solid black;*/
+}
+
+.cards-body{
+    width: 100%;
+    height: 12svh;
+    background-color: white;
+    align-items: center;
+    /*border: 1px solid black;*/
+}
+
+.description{
+    padding: 5px;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    /*border: 1px solid black;*/
+}
+
+.price{
+    padding: 5px;
+    text-align: center;
+    color: gray;
+    font-size: 10px;
+    /*border: 1px solid black;*/
+}
+
+.cards-btn{
+    width: 100%;
+    height: 6svh;
+    background-color: lch(31.38% 28.62 262.03 / 0.863);
+    color: white;
+    text-align: center;
+}
+
+.btn{
+    padding-top: 10px;
+    font-size: 10px;
 }
 
 .galery{
@@ -164,22 +195,25 @@ body{
 .footer{
     grid-area: footer;
     background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    height: 10svh;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    height: 2.5rem;
+    width: 100%;
+    /*border: 1px solid black;*/
+    
 }
 
 .footer p{
     text-align: center;
+    padding: 2svh;
 }
 
 .grid-container{
     display: grid;
     grid-template-areas:
-        "header header header header header header header header"
-        "sidebar main main main main main main main"
-        "footer footer footer footer footer footer footer footer";
+        "header header header header header header header header header"
+        "sidebar main main main main main main main main"
+        "footer footer footer footer footer footer footer footer footer";
     gap: 5px;
 }
 
